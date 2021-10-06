@@ -1,0 +1,4 @@
+export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
+export const COUNTER_STOP = 'COUNTER_STOP';
+export const CLICK_USER = 'CLICK_USER';
+export const COUNTER_START = 'COUNTER_START';

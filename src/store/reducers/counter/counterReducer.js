@@ -1,3 +1,5 @@
+import {INCREMENT_COUNTER, COUNTER_STOP, CLICK_USER, COUNTER_START} from '../../actions/actionTypes';
+
 const initialState =
   {
     counterData: 0,
@@ -6,29 +8,26 @@ const initialState =
   };
 function counterReducer(state = initialState, action) {
   switch (action.type) {
-    case 'INCREMENT_COUNTER':
-      console.log('action.counterData',action.counterData)
+    case INCREMENT_COUNTER:
+      console.log('hfp',state)
       return {
         ...state,
         counterData: action.counterData,
         isCounterStarted: true,
       };
-    case 'COUNTER_STOP':
+    case COUNTER_STOP:
+      console.log(state)
       return {
         ...state,
-        isCounterStarted: false,
+        isCounterStarted: action.isCounterStarted,
       };
-    case 'GET_COUNTER_DATA':
-      return {
-        ...state
-      };
-    case 'COUNTER_RESET':
+    case COUNTER_START:
       return {
         ...state,
         counterData: 0,
-        isCounterStarted: false,
+        isCounterStarted: true,
       };
-    case 'CLICK_USER':
+    case CLICK_USER:
       return {
         ...state,
         timeLastClick: action.timeClick,

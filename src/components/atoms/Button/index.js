@@ -6,7 +6,7 @@ const Button = ({styleClass, btnAction, btnName}) => {
     <div>
       <button
         className={styles[styleClass]}
-        onClick={ () => btnAction()}>
+        onClick={() => btnAction()}>
         {btnName}
       </button>
     </div>
