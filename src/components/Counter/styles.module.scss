@@ -1,0 +1,32 @@
+
+.counterBlock {
+  display: block;
+  width: 30%;
+  height: auto;
+  margin: 3rem auto;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0.2rem 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
+
+  & span{
+    font-size: 2rem;
+  }
+}
+
+.counterButtons{
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+
+  & button{
+    width: 7rem;
+    height: 2rem;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  & button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 0.3rem 0.3rem rgba(0, 0, 0, 0.5);
+  }
+}
