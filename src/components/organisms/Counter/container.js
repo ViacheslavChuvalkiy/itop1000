@@ -1,12 +1,10 @@
 import {React, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
-import * as actions from '../../store/actions/';
-import styles from './styles.module.scss';
-import CounterDisplay from "../CounterDisplay";
-import Button from "../Button";
-import {formatTime} from "../../Utils";
+import Counter from "./component";
+import {formatTime} from "../../../Utils";
+import * as actions from "../../../store/actions";
 
-const Counter = () => {
+const CounterContainer = () => {
 
   const dispatch = useDispatch();
   let counterData = useSelector((state) => state.counterReducer.counterData);
@@ -71,22 +69,11 @@ const Counter = () => {
   ];
 
   return (
-    <div className={styles.counterBlock}>
-      <CounterDisplay
+      <Counter
         timeData = {timeData}
         clickCounterUser = {clickCounterUser}
+        buttons = {buttons}
       />
-      <div className={styles.counterButtons}>
-        {buttons.map((item, index) => (
-          <Button
-            key={index}
-            styleClass = {item.styleClass}
-            btnAction = {item.btnAction}
-            btnName = {item.btnName}
-          />
-        ))}
-      </div>
-    </div>
   );
-}
-export default Counter;
+};
+export const container = CounterContainer;
